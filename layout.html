@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="layout.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#">Answer<span>Hub</span></a>
+        <nav class="nav">
+          <a href="#answers">Answers</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn btn-primary">Contact</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Clean HTML + CSS Example</h1>
+        <p>
+          A minimal, responsive layout with a Q&A section. No frameworks, just
+          modern CSS.
+        </p>
+        <a href="#answers" class="btn btn-accent">See Answers</a>
+      </div>
+      <div class="hero-bg" aria-hidden="true"></div>
+    </section>
+
+    <main id="answers" class="container content">
+      <h2>Latest Answers</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3 class="q">Q: What is responsive design?</h3>
+          <p class="a">
+            A: Responsive design ensures a website looks and works great on
+            phones, tablets, and desktops by adapting layout and typography to
+            the screen size.
+          </p>
+          <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>UX</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="q">Q: How do I center a div?</h3>
+          <p class="a">
+            A: Use a flex container on the parent:
+            <code
+              >display: flex; align-items: center; justify-content:
+              center;</code
+            >
+            or use CSS Grid with <code>place-items: center;</code>.
+          </p>
+          <ul class="tags">
+            <li>Layout</li>
+            <li>Flexbox</li>
+            <li>Grid</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 class="q">Q: What are CSS variables?</h3>
+          <p class="a">
+            A: Custom properties like <code>--brand</code> that you define in
+            CSS and reuse to keep colors, spacing, and sizes consistent.
+          </p>
+          <ul class="tags">
+            <li>Variables</li>
+            <li>Best Practices</li>
+          </ul>
+        </article>
+      </div>
+    </main>
+
+    <section id="about" class="container content narrow">
+      <h2>About</h2>
+      <p>
+        This template shows a tidy structure, semantic elements, and modern CSS
+        (flex/grid, variables, clamp, and prefers-color-scheme).
+      </p>
+    </section>
+
+    <section id="contact" class="container content narrow">
+      <h2>Contact</h2>
+      <form class="form">
+        <label>
+          <span>Name</span>
+          <input type="text" placeholder="Your name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea rows="4" placeholder="How can we help?" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> AnswerHub. All rights reserved.</small>
+        <a href="#" class="to-top">↑ Back to top</a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
